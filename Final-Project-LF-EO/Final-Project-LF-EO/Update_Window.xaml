@@ -1,0 +1,74 @@
+﻿<Window x:Class="Final_Project_LF_EO.Update_Window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Final_Project_LF_EO"
+        mc:Ignorable="d"
+        Title="&#129504; Update Window" Height="750" Width="685" ResizeMode="NoResize">
+    <Grid Background="CornflowerBlue" RenderTransformOrigin="0.413,0.515" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="285"/>
+            <ColumnDefinition Width="400"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+
+        </Grid.RowDefinitions>
+        <!--Update Menu Title-->
+        <TextBlock Text="Update Item" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" FontSize="40" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="15,25,10,10"/>
+
+        <!--ItemsName-->
+        <TextBlock Text="Item Name" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" Margin="15,25,10,10"/>
+        <ComboBox x:Name="cmbItems" Text="{Binding ItemName}" SelectionChanged="cmbItems_SelectionChanged" IsEditable="True" Grid.Column="1" Grid.Row="1" Width="300" Height="30" BorderThickness="1" HorizontalAlignment="Center" Margin="15,25,10,10"  Padding="5,5,5,5"/>
+
+        <!--Current Available Qty-->
+        <TextBlock Text="Available Quantity" Grid.Column="0" Grid.Row="2"  HorizontalAlignment="Left" FontWeight="Bold" FontSize="20" Margin="15,25,10,10" Padding="0,5,5,5"/>
+        <TextBlock Text="{Binding AvailableQuantity}" FontWeight="Bold" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" FontSize="20" Margin="15,25,10,10" Padding="0,5,5,5"/>
+
+        <!--Change Available Qty-->
+        <TextBlock Text="Change Available Quantity" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Left" FontWeight="Bold" FontSize="20"  Margin="15,25,10,10"  Padding="0,5,5,5"/>
+        <TextBox Text="{Binding AvailableQuantity}" Grid.Column="1" Grid.Row="3" TextAlignment="Center" FontSize="20" Width="300" Margin="53,25,47,10"  Padding="0,5,5,5"/>
+
+        <!--Current Minimum Qty-->
+        <TextBlock Text="Current Minimum Quantity" Grid.Column="0" Grid.Row="4"  HorizontalAlignment="Left" Margin="15,25,10,10"  FontWeight="Bold" FontSize="20"  Padding="0,5,5,5"/>
+        <TextBlock Text="{Binding MinimumQuantity}" FontWeight="Bold" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="3" HorizontalAlignment="Center" FontSize="20" Margin="15,25,10,10"  Padding="5,5,5,5"/>
+
+        <!--Chnage Minimum Qty-->
+        <TextBlock Text="Change Minimum Quantity" Grid.Column="0" Grid.Row="5" HorizontalAlignment="Left" Margin="15,25,10,10" FontWeight="Bold" FontSize="20" Padding="0,5,5,5"/>
+        <TextBox x:Name="txtItemMinQtyUpdate" Text="{Binding MinimumQuantity}" Grid.Column="1" Grid.Row="5" Width="300" BorderThickness="1" TextAlignment="Center" FontSize="20" Background="White" Margin="53,28,47,10" Padding="5,5,5,5"/>
+
+        <!--Supplier-->
+        <TextBlock Text="Supplier" Grid.Column="0" Grid.Row="6" HorizontalAlignment="Left" Margin="15,25,10,10"  FontWeight="Bold" FontSize="20" Padding="0,5,5,5"/>
+        <TextBox x:Name="txtSupplier" Text="{Binding Supplier}" Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="3" Width="300" Height="30" Margin="15,25,10,10" Padding="5,5,5,5"/>
+
+        <!--Category-->
+        <TextBlock Text="Category" Grid.Column="0" Grid.Row="7"  HorizontalAlignment="Left" Margin="15,25,10,10" FontWeight="Bold" FontSize="20" Padding="0,5,5,5"/>
+        <ComboBox x:Name="cmbCategories"  Text="{Binding CategoryItem}" Grid.Column="1" Grid.Row="7"  Grid.ColumnSpan="3" Width="300" Height="30" BorderThickness="2" SelectionChanged="cmbCategories_SelectionChanged" Margin="15,25,10,10" Padding="5,5,5,5"/>
+
+        <!--Confirm Button-->
+        <Button Content="Confirm" Click="btnUpdate_ConfirmUpdate" Grid.Column="1" Grid.Row="8"  Grid.ColumnSpan="3" Height="50" Width="110"  FontWeight="Bold" FontSize="20" Margin="10,25,10,10" Background="AliceBlue">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+    </Grid>
+</Window>

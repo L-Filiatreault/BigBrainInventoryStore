@@ -1,0 +1,125 @@
+﻿<Window x:Class="Final_Project_LF_EO.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Final_Project_LF_EO"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="&#129504; Big Brain Store" Height="750" Width="1010" Closing="Window_InCaseUserDidntSave" ResizeMode="NoResize">
+    <Grid Background="CornflowerBlue">
+     
+
+
+        <Grid x:Name="mainContent" Grid.Row="1" Margin="20" Background="CornflowerBlue">
+            <!--Setting the spacing with the columns-->
+            <Grid.ColumnDefinitions>
+
+                <ColumnDefinition Width="850" />
+                <ColumnDefinition Width="25"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            
+            <!--Setting the spacing with the rows-->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="65"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <!--Row 0 of MainContent: Title of App-->
+
+            <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row ="0" Grid.ColumnSpan="3" Height="50" HorizontalAlignment="Center">
+                <TextBlock Text="Big Brain Store" FontSize="50" FontWeight="Bold" Margin="0,0,0,-20"  Grid.ColumnSpan="3"/>
+            </StackPanel>
+
+            <!--row of first column title of inventory-->
+            <TextBlock Text="Inventory" Grid.Column="0" Grid.Row="1" Padding="0,20,0,5" HorizontalAlignment="Left" FontWeight="Bold" FontSize="33"/>
+            
+            <!--Listbox which holds information of the Inventory List-->
+            <ListBox x:Name= "lbItems" Grid.Row="2" Grid.Column="0" Grid.RowSpan="6" SelectionChanged="lbItems_SelectionChanged">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <WrapPanel>
+                            <TextBlock Text="Item Name: " FontWeight="Bold"/>
+                            <TextBlock Text="{Binding ItemName}" FontWeight="Bold"/>
+                            <TextBlock Text=" | Available Quantity: " FontWeight="Bold"/>
+                            <TextBlock Text="{Binding AvailableQuantity}" FontWeight="Bold"/>
+                            <TextBlock Text=" | Minimum Quantity: " FontWeight="Bold"/>
+                            <TextBlock Text="{Binding MinimumQuantity}" FontWeight="Bold"/>
+                            <TextBlock Text=" | Category: " FontWeight="Bold"/>
+                            <TextBlock Text="{ Binding  CategoryItem}" FontWeight="Bold"/>
+                            <TextBlock Text=" | Supplier: " FontWeight="Bold"/>
+                            <TextBlock Text="{ Binding  Supplier}" FontWeight="Bold"/>
+                            <TextBlock Text=" | Aisle # " FontWeight="Bold"/>
+                            <TextBlock Text="{ Binding AisleNumber}" FontWeight="Bold"/>
+                        </WrapPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <!--Add Button-->
+            <!--<TextBlock Text="Options" Grid.Row="1" Grid.Column="3" Margin="0,0,0,0" FontWeight="Bold" HorizontalAlignment="Center" FontSize="20"/>-->
+            <Button Content="&#10133;" Width="80" Height="70" Click="btnAdd_Click" Grid.Row="2" Grid.Column="3" Margin="0,0,0,5" ToolTip="Add Items" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <!--Remove Button-->
+            <Button Content="&#10006;" Width="80" Height="70" Click="btnRemove_Click" Grid.Row="3" Grid.Column="3" Margin="0,5,0,5" ToolTip="Remove Items" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <!--General Report Button-->
+            <Button Content="&#128195;" Width="80" Height="70" Click ="btnReport_Click" Grid.Row="4" Grid.Column="3" Margin="0,5,0,5" ToolTip="General Report" FontSize="36" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <!--Shopping List Button-->
+            <Button Content="&#128466;" Width="80" Height="70" Click="btnShopping_Click" Grid.Row="5" Grid.Column="3" Margin="0,5,0,5" ToolTip="Shopping List" FontSize="36"  HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <!--Load Button-->
+            <Button Content="&#128194;" Width="80" Height="70" Click="btnLoad_Click" Grid.Row="6" Grid.Column="3" Margin="0,5,0,5" ToolTip="Load Items from File" FontSize="36" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <!--Save Button-->
+            <Button Content="&#128190;" Width="80" Height="70" Click="btnSave_Click" Grid.Row="7" Grid.Column="3" Margin="0,5,0,0" ToolTip="Save Items to File" FontSize="36" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row ="8" Grid.ColumnSpan="3"  HorizontalAlignment="Center">
+                <TextBlock Text="To update, double-click on the item in the list " FontSize="25" FontWeight="Bold" Padding="10,10,10,10"  Grid.ColumnSpan="3"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+
+</Window>

@@ -1,0 +1,42 @@
+﻿<Window x:Class="Final_Project_LF_EO.Shopping_Win"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Final_Project_LF_EO"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="&#129504; Shopping List Window" Height="450" Width="750" ResizeMode="NoResize">
+    <Grid Background="CornflowerBlue">
+
+
+        <!--Setting the spacing with the rows-->
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="150"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row ="0" Grid.ColumnSpan="3"  HorizontalAlignment="Center">
+            <TextBlock Text="Shopping List Menu" FontSize="32" FontWeight="Bold" Margin="0,0,0,0"  Grid.ColumnSpan="3"/>
+        </StackPanel>
+
+        <Grid>
+            <DataGrid x:Name="lbShopping" Grid.Column="0" Grid.Row="0" AutoGenerateColumns="False" IsReadOnly="True" Margin="80,50,100,-250" Grid.ColumnSpan="2" HorizontalAlignment="Center"
+                      CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" CanUserResizeColumns="False">
+                
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Item Name" Binding="{Binding ItemName}"/>
+                    <DataGridTextColumn Header="Category" Binding="{Binding CategoryItem}"/>
+                    <DataGridTextColumn Header="Minimum Quantity" Binding="{Binding MinimumQuantity}"/>
+                    <DataGridTextColumn Header="Available Quantity" Binding="{Binding AvailableQuantity}"/>
+                    <DataGridTextColumn Header="Aisle Number" Binding="{Binding AisleNumber}"/>
+                    <DataGridTextColumn Header="Supplier " Binding="{Binding Supplier}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+
+
+    </Grid>
+</Window>

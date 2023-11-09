@@ -1,0 +1,10 @@
+﻿<Application x:Class="Final_Project_LF_EO.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Final_Project_LF_EO"
+             StartupUri="MainWindow.xaml" 
+             DispatcherUnhandledException="Application_DispatcherUnhandledException">
+    <Application.Resources>
+         
+    </Application.Resources>
+</Application>

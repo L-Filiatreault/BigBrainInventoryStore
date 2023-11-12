@@ -1,5 +1,3 @@
-The REAME should describe your project, and what context it was created.
-
 #Big Brain Inventory Store
 
 This project is designed to imitate an interactive app that allows a user to input items into the app for their grocery store. They can also delete any items, update items, and also save the list of items into a CSV file and load that file for later on. 

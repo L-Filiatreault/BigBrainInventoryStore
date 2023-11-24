@@ -1,4 +1,4 @@
-# Big Brain Inventory Store
+# Big Brain Inventory Store :brain:
 
 This project is designed to imitate an interactive app that allows a user to input items into the app for their grocery store. They can also delete any items, update items, and also save the list of items into a CSV file and load that file for later on. 
 
